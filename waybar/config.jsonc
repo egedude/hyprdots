@@ -1,0 +1,65 @@
+// ~/.config/waybar/config.jsonc
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+
+  "modules-left": ["hyprland/workspaces", "custom/wallpaper"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "custom/spotify",
+    "pulseaudio",
+    "battery",
+    "network",
+    "tray"
+  ],
+
+  "hyprland/workspaces": {
+    "on-click": "activate"
+  },
+
+  "custom/wallpaper": {
+    "format": "🖼️",
+    "tooltip": "Select wallpaper",
+    "on-click": "~/.config/waybar/scripts/select_wallpaper.sh",
+    "interval": 0
+  },
+
+  "clock": {
+    "format": "{:%H:%M}"
+  },
+
+  "pulseaudio": {
+    "format": "🔊 {volume}%",
+    "format-muted": "🔇 Muted",
+    "on-click": "pamixer -t",
+    "on-scroll-up": "pamixer -i 5",
+    "on-scroll-down": "pamixer -d 5"
+  },
+
+  "custom/spotify": {
+    "exec": "playerctl metadata --format '{{artist}} - {{title}}'",
+    "return-type": "text",
+    "format": "{}",
+    "interval": 5,
+    "max-length": 40,
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+  },
+
+  "battery": {
+    "format": "🔋 {capacity}%"
+  },
+
+  "network": {
+    "format-wifi": "📶 {essid} ({signalStrength}%)",
+    "format-ethernet": "🖧 {ifname}",
+    "format-disconnected": "🚫 No Network",
+    "tooltip": true
+  },
+
+  "tray": {
+    "spacing": 10
+  }
+}

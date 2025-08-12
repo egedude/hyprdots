@@ -1,0 +1,48 @@
+* {
+font-family: "JetBrainsMono Nerd Font", sans-serif;
+font-size: 14px;
+color: #ffffff;
+}
+
+#waybar {
+background-color: rgba(30, 30, 46, 0.3);
+border-bottom: none;
+}
+
+/* Workspace butonları */
+#workspaces button {
+padding: 0 5px;
+color: #cdd6f4;
+background: transparent;
+border: none;
+}
+
+#workspaces button.active {
+background-color: rgba(137, 180, 250, 0.7);
+color: #1e1e2e;
+border-radius: 8px;
+}
+
+/* Etiket gibi görünen modüller */
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#custom-spotify {
+background-color: rgba(137, 180, 250, 0.15);
+padding: 4px 10px;
+margin: 0 4px;
+border-radius: 10px;
+border: 1px solid rgba(137, 180, 250, 0.25);
+}
+
+/* Spotify modülünün yazısı beyaz */
+#custom-spotify {
+color: #ffffff;
+font-style: normal;
+}
+
+/* Tray */
+#tray {
+padding: 0 8px;
+}
