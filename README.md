@@ -1,2 +1,2 @@
 # hyprdots
-amatör hyprland
+Amatör hyprland
